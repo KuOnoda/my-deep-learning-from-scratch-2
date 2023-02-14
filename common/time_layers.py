@@ -281,7 +281,7 @@ class TimeLSTM:
         self.h,self.c,self.dh = None,None,None
         self.stateful = stateful
 
-    def set_state(self, h, c):
+    def set_state(self, h, c=None):
         self.h = h
         self.c = c
 

@@ -5,7 +5,7 @@ from common.time_layers import *
 import pickle
 
 class Rnnlm:
-    def __init__(self, vocab_size, wordvec_size, hidden_size):
+    def __init__(self, vocab_size=10000, wordvec_size=100, hidden_size=100):
         V, D, H = vocab_size, wordvec_size, hidden_size
         rn = np.random.randn
         #初期値設定
@@ -52,7 +52,7 @@ class Rnnlm:
         with open(file_name, 'wb') as f:
             pickle.dump(self.params,f)
     
-    def load_oarams(self,file_name='Rnnlm.pkl'):
+    def load_params(self,file_name='Rnnlm.pkl'):
         with open(file_name, 'rb') as f:
             self.params = pickle.load(f)
         
